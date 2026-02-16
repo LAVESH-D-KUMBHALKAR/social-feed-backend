@@ -1,0 +1,310 @@
+{
+  "info": {
+    "_postman_id": "c3d06c17-f514-4562-8f5a-6ad5d4c5878b",
+    "name": "social-feed-backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47308174",
+    "_collection_link": "https://go.postman.co/collection/47308174-c3d06c17-f514-4562-8f5a-6ad5d4c5878b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "http://localhost:3000/auth/mock",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"userId\": \"u1\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/mock",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "auth",
+            "mock"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/auth/mock \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\"userId\": \"u1\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:3000/posts",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer mock-u1"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"text\": \"First post!\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/posts",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/posts \\\r\n  -H \"Authorization: Bearer mock-u1\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\"text\": \"First post!\"}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:3000/posts",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer mock-u1"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"text\": \"Second post\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/posts",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/posts \\\r\n  -H \"Authorization: Bearer mock-u1\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\"text\": \"Second post\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:3000/posts",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer mock-u1"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"text\": \"Third post\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/posts",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/posts \\\r\n  -H \"Authorization: Bearer mock-u1\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\"text\": \"Third post\"}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:3000/feed?limit=2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/feed?limit=2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "feed"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "2"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl \"http://localhost:3000/feed?limit=2\""
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:3000/feed?cursor=<cursor>&limit=2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/feed?cursor=<cursor>&limit=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "feed"
+          ],
+          "query": [
+            {
+              "key": "cursor",
+              "value": "<cursor>"
+            },
+            {
+              "key": "limit",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl \"http://localhost:3000/feed?cursor=<cursor>&limit=2\""
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:3000/posts/p_123/replies",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer mock-u1"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"text\": \"Great post!\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/posts/p_123/replies",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts",
+            "p_123",
+            "replies"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/posts/p_123/replies \\\r\n  -H \"Authorization: Bearer mock-u1\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\"text\": \"Great post!\"}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:3000/posts/p_123/upvote",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer mock-u1"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/posts/p_123/upvote",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts",
+            "p_123",
+            "upvote"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/posts/p_123/upvote \\\r\n  -H \"Authorization: Bearer mock-u1\"\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:3000/posts/p_123/upvote",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer mock-u1"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/posts/p_123/upvote",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts",
+            "p_123",
+            "upvote"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/posts/p_123/upvote \\\r\n  -H \"Authorization: Bearer mock-u1\""
+      },
+      "response": []
+    }
+  ]
+}
